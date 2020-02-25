@@ -25,9 +25,10 @@ quantity exhibiting variation in time or variation in space
 ### continuous-time and discrete-time signals
 
 - continuous-time signals' independent variable is continuous:
-  $$x(t) = e^t$$
+  
+  ![](http://latex.codecogs.com/gif.latex?x%28t%29%20%3D%20e%5Et)
 - discrete-time signals are defined only at discrete times:
-  $$x[n] = 2^n$$
+  ![](http://latex.codecogs.com/gif.latex?x%5Bn%5D%20%3D%202%5En)
 
 ![Ch_1_figure_2](assets/Ch_1_figure_2.png)
 
@@ -42,4 +43,3 @@ quantity exhibiting variation in time or variation in space
 
 - analog signals: continuous in both time and amplitude
 - digital signals: discrete in both time and amplitude
-  
