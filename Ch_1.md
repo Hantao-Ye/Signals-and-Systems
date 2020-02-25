@@ -18,17 +18,19 @@ quantity exhibiting variation in time or variation in space
 
 **signals can be represented by graph**
 
-![Ch_1_figure_1](/assets/Ch_1_figure_1.png)
+<div align = center><img src ="/assets/Ch_1_figure_1.png"></div>
 
 ## classifications of signals
 
 ### continuous-time and discrete-time signals
 
-- continuous-time signals' independent variable is continuous:
-  
-  ![](http://latex.codecogs.com/gif.latex?x%28t%29%20%3D%20e%5Et)
+- continuous-time signals' independent variable is continuous
+
+<div align=center><img src="https://latex.codecogs.com/svg.latex?x%28t%29%20%3D%20e%5Et"/></div>
+
 - discrete-time signals are defined only at discrete times:
-  ![](http://latex.codecogs.com/gif.latex?x%5Bn%5D%20%3D%202%5En)
+
+<div align=center><img src="https://latex.codecogs.com/svg.latex?x%5Bn%5D%20%3D%202%5En"/></div>
 
 ![Ch_1_figure_2](assets/Ch_1_figure_2.png)
 
@@ -39,6 +41,7 @@ quantity exhibiting variation in time or variation in space
 - sampling of continuous-time signals
 
 ![Ch_1_figure_4](assets/Ch_1_figure_4.png)
+
 ### analog and digital signals
 
 - analog signals: continuous in both time and amplitude
