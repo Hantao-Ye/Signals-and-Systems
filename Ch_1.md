@@ -165,3 +165,15 @@ quantity exhibiting variation in time or variation in space
 3. Odd Function
 
 <center><img src = "https://latex.codecogs.com/svg.latex?%5Cdelta%27%28t%29%3D-%5Cdelta%27%28-t%29"></center>
+
+## Signal Decompositions and Components of a Signal
+
+### Even and Odd Components
+
+
+<center><img height = 200 src = "/assets/Ch_1_figure_14.png"></center>
+
+### Real and Imaginary Components
+
+<center><img height = 200 src = "/assets/Ch_1_figure_15.png"></center>
+
