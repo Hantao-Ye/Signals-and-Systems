@@ -114,15 +114,16 @@ quantity exhibiting variation in time or variation in space
 
 <center><img src = "https://latex.codecogs.com/svg.latex?%5C%5CC%20%3D%20%7CC%7Ce%5E%7Bj%5Ctheta%7D%2C%5C%3Ba%3Dr&plus;j%5Comega_0%5Cvspace%7B3ex%7D%20%5C%5CCe%5E%7Bat%7D%3D%7CC%7Ce%5E%7Bj%5Ctheta%7De%5E%7B%28r&plus;j%5Comega_0%29t%7D%3D%7CC%7Ce%5E%7Brt%7De%5E%7Bj%28%5Comega_0t&plus;%5Ctheta%29%7D%5Cvspace%7B3ex%7D%20%5C%5CCe%5E%7Bat%7D%3D%20%7CC%7Ce%5E%7Brt%7D%28%5Ccos%7B%28%5Comega_0t&plus;%5Ctheta%29%7D&plus;j%5Csin%7B%28%5Comega_0t&plus;%5Ctheta%29%7D%29"></center>
 
-- When r=0, both parts are sinusoidal; 
+- When r=0, both parts are sinusoidal;
 - When r>0, both parts are growing sinusoidal;
 - When r<0, both parts are decaying sinusoidal (damped sinusoids).
 
 4. Sampling Signals
 
-<center><img src = "https://latex.codecogs.com/svg.latex?Sa%28t%29%20%3D%20%5Cfrac%7B%5Csin%7Bt%7D%7D%7Bt%7D">
+<center>
+<img src = "https://latex.codecogs.com/svg.latex?Sa%28t%29%20%3D%20%5Cfrac%7B%5Csin%7Bt%7D%7D%7Bt%7D">
 
-<img src = "https://www5a.wolframalpha.com/Calculate/MSP/MSP25731aggid5g7g1463ad000066e36f1193idbhha?MSPStoreType=image/gif&s=28"></center>
+<img src = "/assets/Ch_1_figure_16.png"></center>
 
 ## The Unit Impulse and Unit Step Functions
 
@@ -150,7 +151,7 @@ quantity exhibiting variation in time or variation in space
 
 <center><img src = "https://latex.codecogs.com/svg.latex?u%28t%29%3D%5Cint_%7B-%5Cinfty%7D%5E%7Bt%7D%7B%5Cdelta%28%5Ctau%29%5Cmathrm%7Bd%7D%5Ctau%7D%20%5Cquad%20%5Cdelta%28t%29%3D%5Cfrac%7B%5Cmathrm%7Bd%7Du%28t%29%7D%7B%5Cmathrm%7Bd%7Dt%7D"></center>
 
-- Impulse Doublet Signal 
+- Impulse Doublet Signal
 
 <center><img src = "/assets/Ch_1_figure_13.png"></center>
 
@@ -170,10 +171,84 @@ quantity exhibiting variation in time or variation in space
 
 ### Even and Odd Components
 
-
 <center><img height = 200 src = "/assets/Ch_1_figure_14.png"></center>
 
 ### Real and Imaginary Components
 
 <center><img height = 200 src = "/assets/Ch_1_figure_15.png"></center>
 
+## Systems
+
+a process in which **input signals** are transformed by the system or cause the system to respond in some way, resulting in other signals as **outputs**
+
+### Descriptions
+
+- input and output description
+  N-order linear differential equation
+- state-space description
+  N first-order differential equations
+
+### Interconnections
+
+- series interconnection
+  <center><img src = "/assets/Ch_1_figure_17.png"></center>
+- parallel interconnection
+  <center><img src = "/assets/Ch_1_figure_18.png"></center>
+- feedback connection
+  <center><img src = "/assets/Ch_1_figure_19.png"></center>
+- complicated connection which combine the former two interconnections
+  <center><img src = "/assets/Ch_1_figure_20.png"></center>
+
+## Basic System Properties
+
+### Linearity
+
+- additivity
+
+<center><img height = 100 src ="/assets/Ch_1_figure_21.png"></center>
+
+- homogeneity
+
+<center><img height = 80 src = "/assets/Ch_1_figure_22.png"></center>
+
+<center><img  src = "/assets/Ch_1_figure_23.png"></center>
+
+### Time-Invariant
+
+<center><img height = 120 src = "/assets/Ch_1_figure_24.png">
+
+<img height = 200 src = "/assets/Ch_1_figure_25.png"></center>
+
+### With Memory
+
+- memoryless
+  
+  its output for each value of the independent variable at a given time is dependent **only on the input at that same time**
+
+- system with memory
+
+  it **retains or stores information** about input values at time other than the current time
+  *E.g.: Accumulator, Delay;*
+
+### Causality
+
+- casual system
+
+  output depends **only on the input at present time** and in the past
+
+  *All memoryless systems are casual systems*
+- noncasual system
+  *E.g.: Data Smoothing*
+
+
+### Invertibility
+
+  distinct input lead to distinct output
+
+<center><img src = "/assets/Ch_1_figure_26.png"></center>
+
+### Stability
+
+if the input to a stable system is bounded, then the output must also be bounded
+
+<center><img src = "/assets/Ch_1_figure_27.png"></center>
