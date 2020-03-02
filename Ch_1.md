@@ -1,6 +1,6 @@
 # CH_1
 
-## Signals
+## 1.1 Signals
 
 ### communication system
 
@@ -20,17 +20,21 @@ quantity exhibiting variation in time or variation in space
 
 <div align = center><img src ="./assets/Ch_1_figure_1.png"></div>
 
-## Classifications of Signals
+## 1.2 Classifications of Signals
 
 ### continuous-time and discrete-time signals
 
 - continuous-time signals' independent variable is continuous
 
-<div align=center><img src="https://latex.codecogs.com/svg.latex?x%28t%29%20%3D%20e%5Et"/></div>
+$$
+x(t)=e^t
+$$
 
 - discrete-time signals are defined only at discrete times:
 
-<div align=center><img src="https://latex.codecogs.com/svg.latex?x%5Bn%5D%20%3D%202%5En"/></div>
+$$
+x[n]=2^n
+$$
 
 ![Ch_1_figure_2](assets/Ch_1_figure_2.png)
 
@@ -53,11 +57,15 @@ quantity exhibiting variation in time or variation in space
 
 - for continuous-time
 
-  <div align = center><img src = "https://latex.codecogs.com/svg.latex?%5Cinline%20x%28t%29%20%3D%20x%28t&plus;T%29"></div>
+$$
+x(t)=x(t+T)
+$$
 
 - for discrete-time
 
-  <center><img src = "https://latex.codecogs.com/svg.latex?%5Cinline%20x%5Bn%5D%3Dx%5Bn&plus;N%5D"></div>
+$$
+x[n]=x[n+N]
+$$
 
 ### determinate and random signals
 
@@ -69,51 +77,68 @@ quantity exhibiting variation in time or variation in space
 
 ### energy and power signals
 
-- energy signals <img src = "https://latex.codecogs.com/svg.latex?%5Cinline%200%3CE%3C%5Cinfty%2C%5C%3BP%5Cto0">
+- energy signals $0<E<\infty$, $P\to 0$
 
 <div align=center><img src = "./assets/Ch_1_figure_6.png"></div>
 
-- power signals <img src="https://latex.codecogs.com/svg.latex?%5Cinline%200%3CP%3C%5Cinfty%2C%5C%3BE%5Cto%5Cinfty">
+- power signals $0<P<\infty$, $E\to\infty$
 
 <div align=center><img src="./assets/Ch_1_figure_7.png"></div>
 
-- signals with neither finite E nor finite P <img src = "https://latex.codecogs.com/svg.latex?%5Cinline%20E%5Cto%5Cinfty%2C%5C%3BP%5Cto%5Cinfty">
+- signals with neither finite E nor finite P $E\to\infty$, $P\to \infty$
 
 <div align = center><img height = 200 src = "./assets/Ch_1_figure_8.png"></div>
 
-## Transformations of the Independent Variable of Signals
+## 1.3 Transformations of the Independent Variable of Signals
 
 ### time shift
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?x%28t%29%20%5Cto%20x%28t-t_0%29"></div>
+$$
+x(t)\to x(t-t_0)
+$$
 
 ### time reversal _(left +, right -)_
 
-<div align = center><img src="https://latex.codecogs.com/svg.latex?x%28t%29%20%5Cto%20x%28-t%29"></div>
+$$
+x(t)\to x(-t)
+$$
 
 ### time scaling
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?x%28t%29%20%5Cto%20x%28k_0t%29"></div>
+$$
+x(t)\to x(k_0t)
+$$
+
 
 **First Scaling, Second Shift**
 
 **先尺缩，再平移**
 
-## Some Useful Signal Modes
+## 1.4 Some Useful Signal Modes
 
 ### Real Exponential Signals
 
-<div align = center><img src="https://latex.codecogs.com/svg.latex?x%28t%29%20%3D%20Ce%5E%7Bat%7D"></div>
+$$
+x(t)=Ce^{at}
+$$
 
 <div align = center><img src = "./assets/Ch_1_figure_9.png"></div>
 
 ### Periodic Complex Exponential and Sinusoidal Signals
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?x%28t%29%20%3D%20Ce%5E%7Bj%5Comega_0t%7D"></div>
+$$
+x(t)=Ce^{j\omega_0t}
+$$
 
 ### General Complex Exponential Signals
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5C%5CC%20%3D%20%7CC%7Ce%5E%7Bj%5Ctheta%7D%2C%5C%3Ba%3Dr&plus;j%5Comega_0%5Cvspace%7B3ex%7D%20%5C%5CCe%5E%7Bat%7D%3D%7CC%7Ce%5E%7Bj%5Ctheta%7De%5E%7B%28r&plus;j%5Comega_0%29t%7D%3D%7CC%7Ce%5E%7Brt%7De%5E%7Bj%28%5Comega_0t&plus;%5Ctheta%29%7D%5Cvspace%7B3ex%7D%20%5C%5CCe%5E%7Bat%7D%3D%20%7CC%7Ce%5E%7Brt%7D%28%5Ccos%7B%28%5Comega_0t&plus;%5Ctheta%29%7D&plus;j%5Csin%7B%28%5Comega_0t&plus;%5Ctheta%29%7D%29"></div>
+$$
+\begin{aligned}
+  C&=|C|e^{j\theta},\;a=r+j\omega_0\\[2ex]
+  Ce^{at}&=|C|e^{j\theta}e^{(r+j\omega_0)t}=|C|e^{rt}e^{j(\omega_0t+\theta)}\\[2ex]
+  Ce^{at}&=|C|e^{rt}(\cos(\omega_0t+\theta)+j\sin(\omega_0t+\theta))
+\end{aligned}
+$$
 
 - When r = 0, both parts are sinusoidal;
 - When r > 0, both parts are growing sinusoidal;
@@ -121,12 +146,14 @@ quantity exhibiting variation in time or variation in space
 
 ### Sampling Signals
 
-<div align = center>
-<img src = "https://latex.codecogs.com/svg.latex?Sa%28t%29%20%3D%20%5Cfrac%7B%5Csin%7Bt%7D%7D%7Bt%7D">
 
+$$
+Sa(t)=\frac{\sin{t}}{t}
+$$
+<div align = center>
 <img src = "./assets/Ch_1_figure_16.png"></div>
 
-## The Unit Impulse and Unit Step Functions
+## 1.5 The Unit Impulse and Unit Step Functions
 
 ### Unit Step Function
 
@@ -142,33 +169,52 @@ quantity exhibiting variation in time or variation in space
 
 2. Even Function
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5Cdelta%28t%29%3D%5Cdelta%28-t%29"></div>
+$$
+\delta(t)=\delta(-t)
+$$
 
 3. Time Scaling
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5Cdelta%28kt%29%3D%5Cfrac%7B1%7D%7B%7Ck%7C%7D%5Cdelta%28t%29"></div>
+$$
+\delta(kt)=\frac{1}{|k|}\delta(t)
+$$
 
 4. **Relationship to Unit Step Function**
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?u%28t%29%3D%5Cint_%7B-%5Cinfty%7D%5E%7Bt%7D%7B%5Cdelta%28%5Ctau%29%5Cmathrm%7Bd%7D%5Ctau%7D%20%5Cquad%20%5Cdelta%28t%29%3D%5Cfrac%7B%5Cmathrm%7Bd%7Du%28t%29%7D%7B%5Cmathrm%7Bd%7Dt%7D"></div>
+$$
+\begin{aligned}
+  u(t)&=\int_{-\infty}^{t}{\delta(\tau)\mathrm{d}\tau}\\[2ex]
+  \delta(t)&=\frac{\mathrm{d}u(t)}{\mathrm{d}t}
+\end{aligned}
+$$
+
 
 ### Impulse Doublet Signal
 
 <div align = center><img height = 200 src = "./assets/Ch_1_figure_13.png"></div>
 
 1. **Sampling Property**
-
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5C%5Cx%28t%29%20%3D%20%5Cdelta%27%28t-t_0%29%3Dx%28t_0%29%5Cdelta%27%28t-t_0%29-x%27%28t_0%29%5Cdelta%28t-t_0%29%5Cvspace%7B3ex%7D%20%5C%5C%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dx%28t_0%29%5Cdelta%27%28t-t_0%29%5Cmathrm%7Bd%7Dt%3D-x%27%28t_0%29"></div>
+$$
+\begin{aligned}
+x(t)=\delta'(t-t_0)&=x(t_0)\delta'(t-t_0)-x'(t_0)\delta(t-t_0)\\[2ex]
+\int_{-\infty}^{\infty}{x(t_0)\delta'(t-t_0)\mathrm{d}t}&=-x'(t_0)
+\end{aligned}
+$$
 
 2. Scaling
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5Cdelta%27%28kt%29%3D%5Cfrac%7B1%7D%7Bk%7Ck%7C%7D%5Cdelta%27%28t%29%2C%5C%3Bk%5Cneq0"></div>
+
+$$
+\delta'(kt)=\frac{1}{k|k|}\delta'(t),k\neq0
+$$
 
 3. Odd Function
 
-<div align = center><img src = "https://latex.codecogs.com/svg.latex?%5Cdelta%27%28t%29%3D-%5Cdelta%27%28-t%29"></div>
+$$
+\delta'(t)=-\delta'(-t)
+$$
 
-## Signal Decompositions and Components of a Signal
+## 1.6 Signal Decompositions and Components of a Signal
 
 ### Even and Odd Components
 
@@ -178,7 +224,7 @@ quantity exhibiting variation in time or variation in space
 
 <div align = center><img height = 200 src = "./assets/Ch_1_figure_15.png"></div>
 
-## Systems
+## 1.7 Systems
 
 a process in which **input signals** are transformed by the system or cause the system to respond in some way, resulting in other signals as **outputs**
 
@@ -207,7 +253,7 @@ a process in which **input signals** are transformed by the system or cause the 
 
   <div align = center><img src = "./assets/Ch_1_figure_20.png"></div>
 
-## Basic System Properties
+## 1.8 Basic System Properties
 
 ### Linearity
 
