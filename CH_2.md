@@ -52,11 +52,13 @@ $$
 ## 2.2 Partial Initial Conditions
 
 ### The Law of Switching
+
 $$
 \begin{aligned}
   v_c(0_-)=v_c(0_+),\;i_L(0_-)=i_L(0_+)
 \end{aligned}
 $$
+
 ### Impulse Function Matching Method
 
 $$
@@ -68,3 +70,60 @@ $$
 $$
 X(s)=\int_{0}^{\infty}{x(t)e^{-st}\mathrm{d}t}
 $$
+
+## 2.3 System Response
+
+$$
+\begin{aligned}
+  \text{Total Response }&=\\[2ex]
+  & = \text{Natural Response}+\text{Forced Response}\\[2ex]
+  & = \text{Zero-input Response}+\text{Zero-state Response}\\[2ex]
+  & = \text{Transient Response}+\text{Steady-state Response}\\[2ex]
+\end{aligned}
+$$
+
+---
+
+- **Zero-input Response**: results only from the initial state (_energy storage_)
+- **Zero-state Response**: results only from the external inputs
+
+---
+
+- _Transient Response_: when $t\to\infty$, the response that approaches to 0
+- _Steady-state Response_: when $t\to\infty$, the response that keeps
+
+---
+
+$$
+\begin{aligned}
+r(t)=r_{zi}(t)+r_{zs}(t)&=\sum_{k=1}^{n}{A_{zik}e^{\alpha_kt}+\sum_{k=1}^n{A_{zsk}e^{\alpha_kt}+B(t)}}\\[2ex]
+&=\text{Zero-input Response}+\text{Zero-state Response}\\[2ex]
+&=\sum_{k=1}^{n}{A_{k}e^{\alpha_kt}}+B(t)\\[2ex]
+&=\text{Natural Response}+\text{Forced Response}
+\end{aligned}
+$$
+
+## 2.4 The Unit Impulse Response
+
+$$
+\begin{aligned}
+&C_0\frac{\mathrm{d}^nr(t)}{\mathrm{d}t^n}+C_1\frac{\mathrm{d}^{n-1}r(t)}{\mathrm{d}t^{n-1}}+\cdots+C_{n-1}\frac{\mathrm{d}r(t)}{\mathrm{d}t}+C_nr(t)\\[2ex]
+&= E_0\frac{\mathrm{d}^me(t)}{\mathrm{d}t^m}+E_1\frac{\mathrm{d}^{m-1}e(t)}{\mathrm{d}t^{m-1}}+\cdots+E_{m-1}\frac{\mathrm{d}e(t)}{\mathrm{d}t}+E_me(t)
+\end{aligned}\tag{1}
+$$
+
+if $e(t)=\delta(t)$, then $r(t)=h(t)$
+
+$$
+\Rightarrow\qquad
+\begin{aligned}
+  &C_0h^{(n)}(t)+C_1h^{(n-1)}(t)+\cdots+C_{n-1}h^{(1)}(t)+C_nh(t)\\[2ex]
+  &=E_0\delta^{(m)}(t)+E_1\delta^{(m-1)}(t)+\cdots+E_{m-1}\delta^{(1)}(t)+E_m\delta(t)
+\end{aligned}\tag{4}
+$$
+
+| Conditions |                             $h(t)$                              |
+| :--------: | :-------------------------------------------------------------: |
+|   $n>m$    |            $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)$             |
+|   $n=m$    |       $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)+B\delta(t)$       |
+|   $n<m$    | $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)+B\delta(t)+C\delta'(t)$ |
