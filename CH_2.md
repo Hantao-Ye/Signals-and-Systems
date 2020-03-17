@@ -30,6 +30,8 @@ $$
   1. **Characteristic equation**
      $$C_0\alpha^n+C_1\alpha^{n-1}+\cdots+C_{n-1}\alpha+C_n=0\tag{3}$$
   2. **Characteristic roots** $\;\alpha_1,\alpha_2,\cdots,\alpha_n\;$ satisfy tje characteristic equation
+   ---
+  (**the basic solution to characteristic solutions**)
   3. **Homogeneous solution**
      $$\;r_h(t)=\sum_{i=1}^{n}{A_ie^{\alpha_it}}$$
      _If $\alpha_1$ is the k-th repeated roots, then there will be k number of $\alpha_1$:_$\sum_{i=1}^{k}{A_i t^{k-i}}e^{\alpha_1t}$
@@ -42,6 +44,7 @@ $$
      | $\sin(\omega t)$/$\cos(\omega t)$ | $B_1\sin(\omega t)+B_2\cos (\omega t)$ |
      | $t^pe^{\alpha t}\sin(\omega t)$/$t^pe^{\alpha t}\cos(\omega t)$ | $(B_1t^p+B_2t^{p-1}+L+B_pt+B_{p+1})e^{\alpha t}\sin(\omega t)+(D_1t^p+D_2t^{p-1}+L+D_pt+D_{p+1})e^{\alpha t}\cos(\omega t)$ |
 - Auxiliary conditions (initial conditions)
+  
   1. Determine the coefficients
 
 $$
@@ -127,3 +130,75 @@ $$
 |   $n>m$    |            $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)$             |
 |   $n=m$    |       $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)+B\delta(t)$       |
 |   $n<m$    | $[\sum_{i=1}^{n}{A_ie^{\alpha_it}}]u(t)+B\delta(t)+C\delta'(t)$ |
+
+## 2.5 The Convolution Integral
+
+$$
+y(t)=x(t)*h(t)=\int_{-\infty}^{\infty}{x(\tau)h(t-\tau)\mathrm{d}\tau}
+$$
+
+- time reversal: $h(\tau)\rightarrow h(-\tau)$
+- time shift: $h(-\tau)\rightarrow h(t-\tau)$
+- multiplication: $x(\tau)h(t-\tau)$
+- integrating: $y(t)=\int_{-\infty}^{\infty}{x(\tau)h(t-\tau)\mathrm{d}\tau}$
+
+## 2.6 Properties of Convolution
+
+### The Commutative Property
+
+$$
+x(t)*h(t)=h(t)*x(t)
+$$
+
+### The Distributive Property
+
+$$
+x(t)*[h_1(t)+h_2(t)]=x(t)*h_1(t)+x(t)*h_2(t)
+$$
+
+### The Associative Property
+
+$$
+[x(t)*h_1(t)]*h_2(t)=x(t)*[h_1(t)*h_2(t)]
+$$
+
+### The Differential and Integral Property
+
+$$
+\begin{aligned}
+&\text{differential}\\[2ex]
+y'(t)&=x(t)*h'(t)=x'(t)*h(t)\\[2ex]
+y^{(n)}(t)&=x(t)*h^{(n)}(t)=x^{(n)}(t)*h(t)\\[2ex]
+\end{aligned}\\[8ex]
+\begin{aligned}
+&\text{integral}\\[2ex]
+y^{(-1)}(t)&=x(t)*h^{(-1)}(t)=x^{(-1)}(t)*h(t)\\[2ex]
+y^{(-m)}(t)&=x(t)*h^{(-m)}(t)=x^{(-m)}(t)*h(t)\\[2ex]
+\end{aligned}\\[8ex]
+\begin{aligned}
+&\text{generally}\\[2ex]
+y^{(n-m)}(t)&=x^{(n)}(t)*h^{(-m)}(t)=x^{(-m)}(t)*h^{(n)}(t)\\[2ex]
+&\text{specially, }n = 1\;m=1\\[2ex]
+y(t)&=x^{(-1)}(t)*h'(t)=x'(t)*h^{(-1)}(t)\\[2ex]
+\end{aligned}
+$$
+
+## 2.7 System Properties
+
+### Stability
+
+**Bounded Input Bounded Output (BIBO)**
+
+$$\int_{-\infty}^{\infty}{|h(t)|\mathrm{d}t}<\infty$$
+
+_Proof:_
+
+$$
+\begin{aligned}
+&y(t)=x(t)*h(t)=h(t)*x(t)\\[2ex]
+&\text{Let }|x(t)|\leq B\\[2ex]
+&|y(t)|=|h(t)*x(t)|=|\int_{-\infty}^{\infty}{h(\tau)\cdot x(t-\tau)\mathrm{d}\tau}|\\[2ex]
+&\leq \int_{-\infty}^{\infty}{|h(\tau)|\cdot |x(t-\tau)|\mathrm{d}\tau}\leq B\int_{-\infty}^{\infty}{|h(\tau)|\mathrm{d}\tau}\\[2ex]
+&\text{If }|y(t)|<\infty\text{, then }\int_{-\infty}^{\infty}{|h(\tau)|\mathrm{d}\tau}<\infty
+\end{aligned}
+$$
