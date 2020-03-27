@@ -140,6 +140,7 @@ $$
 $$
 
 ---
+
 $$
 \begin{aligned}
     a_0C\alpha^n+a_1C\alpha^{n-1}+\cdots +a_{N-1}C\alpha^{n-(N-1)}+a_NC\alpha^{n-N}=0\\[2ex]
@@ -160,4 +161,61 @@ $$
   |$A$|$C$|
   |$r^n$|$Cr^n$|
 - Zero-input Solution + Zero-state Response
+    - homogeneous solution
+    - total solution
+    - 
 - Z-Transform Method
+
+## 3.4
+
+## 3.5 The Convolution Sum
+
+### the Representation of Discrete-time Signals in Terms of Impulses
+
+$$
+\begin{aligned}
+    x[n]&=\cdots+x[-1]\delta[n-1]+x[0]\delta[n]+x[1]\delta[n-1]+\\[2ex]
+        &\cdots+x[m]\delta[n-m]+\cdots\\[2ex]
+        &=\sum_{m=\infty}^{\infty}{x[m]\delta[n-m]}
+\end{aligned}
+$$
+
+for convolution sum $\delta[n]\rightarrow h[n]$
+
+**Time-Invariant** $\delta[n-m]\rightarrow h[n-m]$
+
+**Homogeneity** $x[m]\delta[n-m]\rightarrow x[m]h[n-m]$
+
+**Additivity** $y[n]=\sum_{m=\infty}^{\infty}{x[m]h[n-m]}=x[n]*h[n]$
+
+### Properties of Convolution Sum
+
+**Commutative Property**
+
+$$x[n]*h[n]=h[n]*x[n]$$
+
+**Distributive Property**
+
+$$x[n]*[h_1[n]+h_2[n]]=x[n]*h_1[n]+x[n]*h_2[n]$$
+
+**Associative Property**
+
+$$x[n]*h_1[n]*h_2[n]=x[n]*(h_1[n]*h_2[n])$$
+
+### Calculation of Convolution Sum
+
+- Analytic Method
+- Graphic Method
+- Properties Method
+- Upright Formula Method
+
+## 3.6 Discrete-Time System Properties
+
+- **Stability**
+  $$\sum{|h[n]|}=P<\infty$$
+
+- **Causality**
+  $$
+  h[n] = 0\quad\text{for}\quad n<0\\[2ex]
+  h[n] = h[n]u[n]
+  $$
