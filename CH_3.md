@@ -163,12 +163,9 @@ $$
 - Zero-input Solution + Zero-state Response
     - homogeneous solution
     - total solution
-    - 
 - Z-Transform Method
 
-## 3.4
-
-## 3.5 The Convolution Sum
+## 3.4 The Convolution Sum
 
 ### the Representation of Discrete-time Signals in Terms of Impulses
 
@@ -209,7 +206,7 @@ $$x[n]*h_1[n]*h_2[n]=x[n]*(h_1[n]*h_2[n])$$
 - Properties Method
 - Upright Formula Method
 
-## 3.6 Discrete-Time System Properties
+## 3.5 Discrete-Time System Properties
 
 - **Stability**
   $$\sum{|h[n]|}=P<\infty$$
