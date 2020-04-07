@@ -176,3 +176,9 @@ $$
     y(t)=h(t)*x(t)&\overset{\mathcal{F}}{\leftrightarrow}Y(j\omega)=H(j\omega)X(j\omega)
 \end{aligned}
 $$
+
+## 5.5 The Multiplication Property
+
+$$
+r(t)=s(t)p(t)\overset{\mathcal{F}}{\leftrightarrow}R(j\omega)=\frac{1}{2\pi}[S(j\omega)*P(j\omega)]
+$$
