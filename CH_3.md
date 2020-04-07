@@ -163,6 +163,8 @@ $$
 - Zero-input Solution + Zero-state Response
     - homogeneous solution
     - total solution
+    - 解出齐次解
+    - 利用回溯法和$0_-$条件解出每个冲激函数的常系数
 - Z-Transform Method
 
 ## 3.4 The Convolution Sum

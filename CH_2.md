@@ -30,7 +30,7 @@ $$
   1. **Characteristic equation**
      $$C_0\alpha^n+C_1\alpha^{n-1}+\cdots+C_{n-1}\alpha+C_n=0\tag{3}$$
   2. **Characteristic roots** $\;\alpha_1,\alpha_2,\cdots,\alpha_n\;$ satisfy tje characteristic equation
-   ---
+  ***
   (**the basic solution to characteristic solutions**)
   3. **Homogeneous solution**
      $$\;r_h(t)=\sum_{i=1}^{n}{A_ie^{\alpha_it}}$$
@@ -44,7 +44,7 @@ $$
      | $\sin(\omega t)$/$\cos(\omega t)$ | $B_1\sin(\omega t)+B_2\cos (\omega t)$ |
      | $t^pe^{\alpha t}\sin(\omega t)$/$t^pe^{\alpha t}\cos(\omega t)$ | $(B_1t^p+B_2t^{p-1}+L+B_pt+B_{p+1})e^{\alpha t}\sin(\omega t)+(D_1t^p+D_2t^{p-1}+L+D_pt+D_{p+1})e^{\alpha t}\cos(\omega t)$ |
 - Auxiliary conditions (initial conditions)
-  
+
   1. Determine the coefficients
 
 $$
@@ -89,6 +89,8 @@ $$
 
 - **Zero-input Response**: results only from the initial state (_energy storage_)
 - **Zero-state Response**: results only from the external inputs
+- **零输入响应**: 求系统的通解，由非零的$0_-$状态值决定的初始值（$0_+$状态值）求出待定系数
+- **零状态响应**: 在激励信号作用下求系统方程的全解，由$0_-$状态值为零决定的初始值（$0_+$状态值）求待定系数
 
 ---
 
@@ -183,7 +185,27 @@ y(t)&=x^{(-1)}(t)*h'(t)=x'(t)*h^{(-1)}(t)\\[2ex]
 \end{aligned}
 $$
 
+### Convolution with Unit Impulse Signal
+
+$$
+\begin{aligned}
+	&f(t)*\delta (t) =\int_{-\infty}^{\infty}{f(\tau)\delta(t-\tau)\mathrm{d}\tau}=\int_{-\infty}^{\infty}{f(t)\delta(\tau - t)\mathrm{d}\tau}=f(t)\\[2ex]
+	&f(t)*\delta(t-t_0)=f(t-t_0)\\[2ex]
+	&f(t-t_1)*\delta(t-t_2)=f(t-t_1-t_2)\\[2ex]
+	&f(t)*\delta'(t)=f'(t)\\[2ex]
+	&f(t)*u(t)=\int_{-\infty}^{t}{f(\lambda)\mathrm{d}\lambda}\\[2ex]
+	&f(t)*\delta^{(k)}(t)=f^{(k)}(t)\\[2ex]
+	&f(t)*\delta^{(k)}(t-t_0)=f^{(k)}(t-t_0)\\[2ex]
+\end{aligned}
+$$
+
 ## 2.7 System Properties
+
+### Output Function 
+
+$$
+Output\;Signal = Input\;Signal * Impulse\;Signal
+$$
 
 ### Stability
 
