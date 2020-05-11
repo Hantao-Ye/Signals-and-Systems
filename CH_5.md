@@ -74,7 +74,7 @@ $$
 \end{aligned}
 $$
 
-## 5.3 Properties of The COntinuous-Time Fourier Transform
+## 5.3 Properties of The Continuous-Time Fourier Transform
 
 ### Linearity
 
@@ -164,6 +164,16 @@ $$
     x(0)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)\mathrm{d}\omega}\\[2ex]
 \end{aligned}
 $$
+
+### Real or Imaginary
+
+- Real: $X(j\omega)=X^*(-j\omega)$
+- Imaginary: $X(j\omega)=-X^*(-j\omega)$
+
+### Even and Odd
+
+- Even: $X(j\omega)=X(-j\omega)$
+- Odd: $X(j\omega)=-X(-j\omega)$
 
 ## 5.4 The Convolution Property
 
