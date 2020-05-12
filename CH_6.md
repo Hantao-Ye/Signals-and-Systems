@@ -208,3 +208,94 @@ If $x(t) = 0$ for $t < 0$ and $x(t)$ has a finite limit as $t\to\infty$
 $$
 \lim_{t\to\infty}{x(t)} = \lim_{s\to 0}{sX(s)}
 $$
+
+
+## 6.6 The Unilateral Laplace Transform
+
+> the bilateral transform and the unilateral transform of a casual signal are identical
+> the ROC for the unilateral transform is always a right-half plane
+> unilateral transform can be recognized as the bilateral transform of $x(t)u(t)$
+
+### Differentiation in the Time Domain
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t}x(t)\longleftrightarrow sX(s)-x(0^{-})\\[2ex]
+\frac{\mathrm{d}^n}{\mathrm{d}t^n}x(t)\longleftrightarrow s^nX(s)-\sum_{k=0}^{n-1}{s^{n-k-1}x^{(k)}(0^-)}
+$$
+
+### Solving Differential Equations Using the Unilateral Laplace Transform
+
+$$
+\sum_{k=0}^{N}{a_k \frac{\mathrm{d}^k y(t)}{\mathrm{d}t^k}}=\sum_{k=0}^{M}{b_k \frac{\mathrm{d}^k x(t)}{\mathrm{d}t^k}}\\[2ex]
+H(s) = \frac{\sum_{k=0}^{M}{b_k s^k}}{\sum_{k=0}^{N}{a_k s^k}}
+$$
+
+### Representation of Circuits in s-domain
+
+#### Resistor
+
+<div align = center><img height = 200 src = "./assets/Ch_6_figure_4.png"></div>
+
+$$
+v_R(t) = Ri_R(t)\\[2ex]
+V_R(s) = RI_R(s)\\[2ex]
+$$
+
+#### Inductor
+<div align = center><img height = 200 src = "./assets/Ch_6_figure_5.png"></div>
+<div align = center><img height = 200 src = "./assets/Ch_6_figure_6.png"></div>
+
+$$
+v_L(t) = L\frac{\mathrm{d}i_L(t)}{\mathrm{d}t}\\[2ex]
+V_L(s) = sLI_L(s) - Li_L(0^-)\\[2ex]
+I_L(s) = \frac{1}{sL}V_L(s)=\frac{1}{s}i_L(0^-)\\[2ex]
+$$
+
+#### Conductor
+<div align = center><img height = 400 src = "./assets/Ch_6_figure_7.png"></div>
+
+$$
+i_c(t) = C\frac{\mathrm{d}v_c(t)}{\mathrm{d}t}\\[2ex]
+V_C(s) = \frac{1}{sC}I_C(s)+\frac{1}{s}v_C(0^-)\\[2ex]
+I_C(s) = sCV_C(s)-Cv_C(0^-)\\[2ex]
+$$
+
+## 6.7 System Function
+
+<div align = center><img width = 400 height = 100 src = "./assets/Ch_6_figure_8.png"></div>
+$$
+r(t) = e(t)*h(t)\longleftrightarrow R(s)= E(s)\cdot H(s)\\[2ex]
+H(s) = \frac{R(s)}{E(s)}
+$$
+
+### $H(s)$ Poles
+
+- Single Pole
+
+<div align = center><img height = 450 width = 800 src = "./assets/Ch_6_figure_9.png"></div>
+
+  - **Positive Real Number**: increase exponentially
+  - **Negative Real Number**: decrease exponentially
+---
+- Conjugation Poles
+
+<div align = center><img height = 500 width = 800 src = "./assets/Ch_6_figure_10.png"></div>
+
+  - **Poles on Imaginary Axis**: Constant amplitude shock
+  - **Poles on Right Part of ROC**: Shock increase
+  - **Poles on Left Part of ROC**: Shock decrease
+
+## 6.8 Analysis and Characterization of LTI system Using the Laplace Transform
+
+### Causality
+
+> **The ROC associated with the system function for a causal system is a right-half plane**
+
+### Stability
+
+> **An LTI system is stable if and only if the ROC of its system function $H(s)$ includes the $j\omega$-axis**
+
+> A causal system with rational system function $H(s)$ is stable if and only if all of the poles of $H(s)$ lie in the left-half of the s-plane ―i.e. all of the poles have negative real parts. 
+
+## 6.9 Frequency Response of An LTI System
+
