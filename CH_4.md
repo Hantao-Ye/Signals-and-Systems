@@ -57,7 +57,7 @@ x(t)&=a_0+\sum_{n=1}^{\infty}{a_n\cos(n\omega_1t)+b_n\sin(n\omega_1t)}\\[2ex]
 \end{aligned}
 $$
 
-Let 
+Let
 
 $$
 \begin{aligned}
@@ -88,7 +88,7 @@ x(t)=\sum_{k=-\infty}^{\infty}{a_ke^{jk\omega_0t}}\qquad \omega_0= \frac{2\pi}{T
 $$
 
 - $a_1e^{\pm j\omega_0t}$: fundamental components (first harmonic components)
-- $a_ne^{\pm jn\omega_0t}$: Nth harmonic components 
+- $a_ne^{\pm jn\omega_0t}$: Nth harmonic components
 
 #### Names of the Equations and Coefficients
 
@@ -97,7 +97,7 @@ Given that $\omega_0=\frac{2\pi}{T}$
 - Synthesis Equation:
 
 $$
-x(t)=\sum_{k=-\infty}^{\infty}{a_ke^{jk\omega_0t}}\qquad
+x(t)=\sum_{k=-\infty}^{\infty}{a_ke^{jk\omega_0t}}
 $$
 
 - Analysis Equation:
@@ -109,9 +109,9 @@ $$
 - Fourier Series Coefficients (Spectral Coefficients): $\{a_k\}$
 - Magnitude Spectrum: $|a_k|$
 - Phase Spectrum: $\angle{a_k}$
-> the magnitude spectrum and phase spectrum all have **discrete property**, **harmonic property** and **convergence property**
+  > the magnitude spectrum and phase spectrum all have **discrete property**, **harmonic property** and **convergence property**
 - Constant Component:
-  
+
 $$
 a_0=\frac{1}{T}\int_T{x(t)\mathrm{d}t}
 $$
@@ -175,4 +175,19 @@ the **total average power** in a periodic signal equals the sum of the average p
 
 $$
 \frac{1}{T}\int_0^T {|x(t)|^2\mathrm{d}t}= \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} {|x(t)|^2\mathrm{d}t} = \sum_{-\infty}^{\infty}{|a_k|^2}
+$$
+
+## Table and Equations
+
+|     Periodic Signal     |            Fourier Series Coefficients             |
+| :---------------------: | :------------------------------------------------: |
+|$x(t)$ is half-wave symmetry $x(t)=-x(t-T/2)$ | $a_{2k}  = 0$|
+|     $x(t)$ is real      | \$a_k = a\_{-k}^\*\$ and $ \|a_k\| = \|a_{-k}\| $ |
+| $x(t)$ is real and even |               $a_k$ is real and even               |
+| $x(t)$ is real and odd  |         $a_k$ is purely imaginary and odd          |
+
+$$
+x(t)=\sum_{k=-\infty}^{\infty}{a_ke^{jk\omega_0t}}\\[2ex]
+a_k = \frac{1}{T}\int_T{x(t)e^{-jk\omega_0t}\mathrm{d}t}\\[2ex]
+\frac{1}{T}\int_T {|x(t)|^2\mathrm{d}t} = \sum_{-\infty}^{\infty}{|a_k|^2}
 $$
