@@ -172,3 +172,7 @@ the truncated Fourier series approximation $x_N(t)$ of a discontinuous signal $x
 ## 4.3 Parseval's Relation
 
 the **total average power** in a periodic signal equals the sum of the average powers in **all of its harmonic components**
+
+$$
+\frac{1}{T}\int_0^T {|x(t)|^2\mathrm{d}t}= \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} {|x(t)|^2\mathrm{d}t} = \sum_{-\infty}^{\infty}{|a_k|^2}
+$$
