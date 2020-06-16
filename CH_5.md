@@ -4,22 +4,22 @@
 
 ## Table and Equations
 
-|           Aperiodic Signal           |                                     Fourier Signal                                     |
-| :----------------------------------: | :------------------------------------------------------------------------------------: |
-|            $ax(t)+by(t)$             |                               $aX(j\omega)+bY(j\omega)$                                |
-|              $x(t-t_0)$              |                              $e^{-j\omega t_0}X(j\omega)$                              |
-|        $e^{j\omega_0 t}x(t)$         |                                $X(j(\omega-\omega_0))$                                 |
-|               $x^*(t)$               |                                    $X^*(-j\omega)$                                     |
-|               $x(-t)$                |                                     $X(-j\omega)$                                      |
-|               $x(at)$                |                           $\frac{1}{\|a\|}X(\frac{j\omega}{a})$                            |
-|             $x(t)*y(t)$              |                                 $X(j\omega)Y(j\omega)$                                 |
-|              $x(t)y(t)$              | $\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\theta)Y(j(\omega-\theta))\mathrm{d}\theta}$ |
-| $\frac{\mathrm{d}}{\mathrm{d}t}x(t)$ |                                  $j\omega X(j\omega)$                                  |
-| $\int_{-\infty}^t{x(t)\mathrm{d}t}$  |                  $\frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)$                  |
-|               $tx(t)$                |                    $j\frac{\mathrm{d}}{\mathrm{d}\omega}X(j\omega)$                    |
-|$X(jt)$|$2\pi x(-\omega)$|
-|       $x(t)$ is real and even        |                             $X(j)\omega$ is real and even                              |
-|        $x(t)$ is real and odd        |                        $X(j\omega)$ is purely imaginary and odd                        |
+|           Aperiodic Signal           |                    Fourier Signal                    |
+| :----------------------------------: | :--------------------------------------------------: |
+|            $ax(t)+by(t)$             |              $aX(j\omega)+bY(j\omega)$               |
+|              $x(t-t_0)$              |             $e^{-j\omega t_0}X(j\omega)$             |
+|        $e^{j\omega_0 t}x(t)$         |               $X(j(\omega-\omega_0))$                |
+|               $x^*(t)$               |                   $X^*(-j\omega)$                    |
+|               $x(-t)$                |                    $X(-j\omega)$                     |
+|               $x(at)$                |        $\frac{1}{\|a\|}X(\frac{j\omega}{a})$         |
+|             $x(t)*y(t)$              |                $X(j\omega)Y(j\omega)$                |
+|              $x(t)y(t)$              |        $\frac{1}{2\pi}X(j\omega)*Y(j\omega)$         |
+| $\frac{\mathrm{d}}{\mathrm{d}t}x(t)$ |                 $j\omega X(j\omega)$                 |
+| $\int_{-\infty}^t{x(t)\mathrm{d}t}$  | $\frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)$ |
+|               $tx(t)$                |   $j\frac{\mathrm{d}}{\mathrm{d}\omega}X(j\omega)$   |
+|               $X(jt)$                |                  $2\pi x(-\omega)$                   |
+|       $x(t)$ is real and even        |            $X(j)\omega$ is real and even             |
+|        $x(t)$ is real and odd        |       $X(j\omega)$ is purely imaginary and odd       |
 
 $$
 X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}\mathrm{d}t}\\[2ex]
@@ -27,21 +27,30 @@ x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)e^{j\omega t}\mathrm{d}\ome
 X(0)=\int_{-\infty}^{\infty}{x(t)\mathrm{d}t}\\[2ex]
 x(0)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)\mathrm{d}\omega}\\[2ex]
 \int_{-\infty}^{\infty}{|x(t)|^2\mathrm{d}t}=\frac{1}{2\pi}\int_{-\infty}^{\infty}\Big|X(j\omega)\Big|^2\mathrm{d}\omega\\[2ex]
+y(t)=h(t)*x(t)\overset{\mathcal{F}}{\longleftrightarrow}Y(j\omega)=H(j\omega)X(j\omega)
 $$
 
-|                              Signal                              |                        Fourier Transform                         | Fourier series coefficients |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :-------------------------: |
-|         $\sum_{k=-\infty}^{\infty}{a_ke^{j\omega_0 t}}$          |  $2\pi \sum_{k=-\infty}^{\infty}{a_k\delta(\omega-k\omega_0)}$   |            $a_k$            |
-|                        $e^{j\omega_0 t}$                         |                 $2\pi \delta (\omega-\omega_0)$                  |      $a_1=1\;a_k = 0$       |
-|                         $\cos\omega_0t$                          |      $\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$      |  $a_1=a_{-1}=1/2\; a_k=0$   |
-|                         $\sin\omega_0t$                          | $\frac{\pi}{j}[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]$ | $a_1=-a_{-1}=1/2j\; a_k=0$  |
-|                             $x(t)=1$                             |                       $2\pi\delta(\omega)$                       |       $a_0=1\; a_k=0$       |
-| $x(t)\begin{cases}1\quad \|t\|<T_1\\0\quad \|t\|>T_1\end{cases}$ |                 $\frac{2\sin\omega T_1}{\omega}$                 |
-|                           $\delta (t)$                           |                                1                                 |
-|                              $u(t)$                              |              $\frac{1}{j\omega}+\pi\delta(\omega)$               |
-|$\delta(t-t_0)$|$e^{j\omega t_0}$|
-|$e^{-at}u(t)$|$\frac{1}{a+j\omega}$|
-|$te^{-at}u(t)$|$\frac{1}{(a+j\omega)^2}$|
+check real or imaginary, even or odd
+
+- Real: $X(j\omega)=X^*(-j\omega)$
+- Imaginary: $X(j\omega)=-X^*(-j\omega)$
+- Even: $X(j\omega)=X(-j\omega)$
+- Odd: $X(j\omega)=-X(-j\omega)$
+
+|                              Signal                               |                               Fourier Transform                               | Fourier series coefficients |
+| :---------------------------------------------------------------: | :---------------------------------------------------------------------------: | :-------------------------: |
+|          $\sum_{k=-\infty}^{\infty}{a_ke^{j\omega_0 t}}$          |         $2\pi \sum_{k=-\infty}^{\infty}{a_k\delta(\omega-k\omega_0)}$         |            $a_k$            |
+|                         $e^{j\omega_0 t}$                         |                        $2\pi \delta (\omega-\omega_0)$                        |      $a_1=1\;a_k = 0$       |
+|                          $\cos\omega_0t$                          |            $\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$             |  $a_1=a_{-1}=1/2\; a_k=0$   |
+|                          $\sin\omega_0t$                          |       $\frac{\pi}{j}[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]$        | $a_1=-a_{-1}=1/2j\; a_k=0$  |
+|                             $x(t)=1$                              |                             $2\pi\delta(\omega)$                              |       $a_0=1\; a_k=0$       |
+| $x(t)=\begin{cases}1\quad \|t\|<T_1\\0\quad \|t\|>T_1\end{cases}$ |                       $\frac{2\sin\omega T_1}{\omega}$                        |
+|                      $\frac{\sin Wt}{\pi t}$                      | $X(j\omega)=\begin{cases}1\quad \|\omega\|<W\\0\quad \|\omega\|>W\end{cases}$ |
+|                           $\delta (t)$                            |                                       1                                       |
+|                              $u(t)$                               |                     $\frac{1}{j\omega}+\pi\delta(\omega)$                     |
+|                          $\delta(t-t_0)$                          |                               $e^{j\omega t_0}$                               |
+|                           $e^{-at}u(t)$                           |                             $\frac{1}{a+j\omega}$                             |
+|                          $te^{-at}u(t)$                           |                           $\frac{1}{(a+j\omega)^2}$                           |
 
 ## 5.1 Representation of Aperiodic Signals: The Continuous-Time Fourier Time Transform
 
