@@ -2,6 +2,47 @@
 
 [TOC]
 
+## Table and Equations
+
+|           Aperiodic Signal           |                                     Fourier Signal                                     |
+| :----------------------------------: | :------------------------------------------------------------------------------------: |
+|            $ax(t)+by(t)$             |                               $aX(j\omega)+bY(j\omega)$                                |
+|              $x(t-t_0)$              |                              $e^{-j\omega t_0}X(j\omega)$                              |
+|        $e^{j\omega_0 t}x(t)$         |                                $X(j(\omega-\omega_0))$                                 |
+|               $x^*(t)$               |                                    $X^*(-j\omega)$                                     |
+|               $x(-t)$                |                                     $X(-j\omega)$                                      |
+|               $x(at)$                |                           $\frac{1}{\|a\|}X(\frac{j\omega}{a})$                            |
+|             $x(t)*y(t)$              |                                 $X(j\omega)Y(j\omega)$                                 |
+|              $x(t)y(t)$              | $\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\theta)Y(j(\omega-\theta))\mathrm{d}\theta}$ |
+| $\frac{\mathrm{d}}{\mathrm{d}t}x(t)$ |                                  $j\omega X(j\omega)$                                  |
+| $\int_{-\infty}^t{x(t)\mathrm{d}t}$  |                  $\frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)$                  |
+|               $tx(t)$                |                    $j\frac{\mathrm{d}}{\mathrm{d}\omega}X(j\omega)$                    |
+|$X(jt)$|$2\pi x(-\omega)$|
+|       $x(t)$ is real and even        |                             $X(j)\omega$ is real and even                              |
+|        $x(t)$ is real and odd        |                        $X(j\omega)$ is purely imaginary and odd                        |
+
+$$
+X(j\omega)=\int_{-\infty}^{\infty}{x(t)e^{-j\omega t}\mathrm{d}t}\\[2ex]
+x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)e^{j\omega t}\mathrm{d}\omega}\\[2ex]
+X(0)=\int_{-\infty}^{\infty}{x(t)\mathrm{d}t}\\[2ex]
+x(0)=\frac{1}{2\pi}\int_{-\infty}^{\infty}{X(j\omega)\mathrm{d}\omega}\\[2ex]
+\int_{-\infty}^{\infty}{|x(t)|^2\mathrm{d}t}=\frac{1}{2\pi}\int_{-\infty}^{\infty}\Big|X(j\omega)\Big|^2\mathrm{d}\omega\\[2ex]
+$$
+
+|                              Signal                              |                        Fourier Transform                         | Fourier series coefficients |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :-------------------------: |
+|         $\sum_{k=-\infty}^{\infty}{a_ke^{j\omega_0 t}}$          |  $2\pi \sum_{k=-\infty}^{\infty}{a_k\delta(\omega-k\omega_0)}$   |            $a_k$            |
+|                        $e^{j\omega_0 t}$                         |                 $2\pi \delta (\omega-\omega_0)$                  |      $a_1=1\;a_k = 0$       |
+|                         $\cos\omega_0t$                          |      $\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$      |  $a_1=a_{-1}=1/2\; a_k=0$   |
+|                         $\sin\omega_0t$                          | $\frac{\pi}{j}[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]$ | $a_1=-a_{-1}=1/2j\; a_k=0$  |
+|                             $x(t)=1$                             |                       $2\pi\delta(\omega)$                       |       $a_0=1\; a_k=0$       |
+| $x(t)\begin{cases}1\quad \|t\|<T_1\\0\quad \|t\|>T_1\end{cases}$ |                 $\frac{2\sin\omega T_1}{\omega}$                 |
+|                           $\delta (t)$                           |                                1                                 |
+|                              $u(t)$                              |              $\frac{1}{j\omega}+\pi\delta(\omega)$               |
+|$\delta(t-t_0)$|$e^{j\omega t_0}$|
+|$e^{-at}u(t)$|$\frac{1}{a+j\omega}$|
+|$te^{-at}u(t)$|$\frac{1}{(a+j\omega)^2}$|
+
 ## 5.1 Representation of Aperiodic Signals: The Continuous-Time Fourier Time Transform
 
 We think of _an aperiodic signal_ as the limit of _a periodic signal_ as the period **becomes arbitrarily large**, and we examine the limiting behavior of the Fourier series representation for the signal
@@ -79,28 +120,21 @@ $$
 ### Linearity
 
 $$
-\begin{aligned}
-\text{if}\qquad x(t)&\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-y(t)&\overset{\mathcal{F}}{\leftrightarrow}Y(j\omega)\\[2ex]
-\text{then}\qquad ax(t)+by(t)&\overset{\mathcal{F}}{\leftrightarrow}aX(j\omega)+bY(j\omega)\\[2ex]
-\end{aligned}
+ax(t)+by(t)\overset{\mathcal{F}}{\longleftrightarrow}aX(j\omega)+bY(j\omega)
 $$
 
 ### Time Shifting
 
 $$
-\begin{aligned}
-    &\text{if}\qquad  x(t)\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-    &\text{then}\qquad x(t-t_0)\overset{\mathcal{F}}{\leftrightarrow}e^{-j\omega t_0}X(j\omega)\\[2ex]
-\end{aligned}
+x(t-t_0)\overset{\mathcal{F}}{\longleftrightarrow}e^{-j\omega t_0}X(j\omega)
 $$
 
 ### Conjugation and Conjugate Symmetry
 
 $$
 \begin{aligned}
-    \text{if}\qquad x(t)&\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-    \text{then}\qquad x^*(t)&\overset{\mathcal{F}}{\leftrightarrow}X^*(j\omega)\\[2ex]
+    \text{if}\qquad x(t)&\overset{\mathcal{F}}{\longleftrightarrow}X(j\omega)\\[2ex]
+    \text{then}\qquad x^*(t)&\overset{\mathcal{F}}{\longleftrightarrow}X^*(j\omega)\\[2ex]
     \text{if }x(t)\text{ is real, then}\qquad X(j\omega)&=X^*(j\omega)\\[2ex]
     X(j\omega)=|X(j\omega)|e^{j\phi(\omega)}&=Re(\omega)+jIm(\omega)\\[2ex]
     x(t)=x_e(t)+x_o(t)\\[2ex]
@@ -112,8 +146,7 @@ $$
 
 $$
 \begin{aligned}
-    \text{if}\qquad x(t)&\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-    \text{then}\qquad \frac{\mathrm{d}x(t)}{\mathrm{d}t}&\overset{\mathcal{F}}{\leftrightarrow}j\omega X(j\omega)\\[2ex]
+    \frac{\mathrm{d}x(t)}{\mathrm{d}t}&\overset{\mathcal{F}}{\leftrightarrow}j\omega X(j\omega)\\[2ex]
     \frac{\mathrm{d}^nx(t)}{\mathrm{d}t^n}&\overset{\mathcal{F}}{\leftrightarrow}(j\omega)^n X(j\omega)\\[2ex]
     \int_{-\infty}^t{x(\tau)\mathrm{d}\tau}&\overset{\mathcal{F}}{\leftrightarrow} \frac{1}{j\omega}X(j\omega)+\pi X(0)\delta(\omega)\\[2ex]
     &=X(j\omega)\cdot \Big[\frac{1}{j\omega}+\pi \delta(\omega)\Big]
@@ -123,37 +156,31 @@ $$
 ### Time and Frequency Scaling
 
 $$
-\begin{aligned}
-    \text{if}\qquad x(t)&\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-    \text{then}\qquad x(at)&\overset{\mathcal{F}}{\leftrightarrow}\frac{1}{|a|}X(\frac{j\omega}{a})\\[2ex]
-\end{aligned}
+x(at)\overset{\mathcal{F}}{\longleftrightarrow}\frac{1}{|a|}X(\frac{j\omega}{a})
 $$
 
 ### Duality
 
 $$
-\begin{aligned}
-    \text{if}\qquad x(t)&\overset{\mathcal{F}}{\leftrightarrow}X(j\omega)\\[2ex]
-    \text{then}\qquad X(jt)&\overset{\mathcal{F}}{\leftrightarrow}2\pi x(-\omega)\\[2ex]
-\end{aligned}
+X(jt)\overset{\mathcal{F}}{\longleftrightarrow}2\pi x(-\omega)
 $$
 
 #### Frequency Shifting
 
 $$
-e^{j\omega_0 t}x(t)\overset{\mathcal{F}}{\leftrightarrow}X(j(\omega-\omega_0))
+e^{j\omega_0 t}x(t)\overset{\mathcal{F}}{\longleftrightarrow}X(j(\omega-\omega_0))
 $$
 
 #### Differentiation in Frequency-Domain
 
 $$
--jx(t)\overset{\mathcal{F}}{\leftrightarrow}\frac{\mathrm{d}X(j\omega)}{\mathrm{d}\omega}
+-jtx(t)\overset{\mathcal{F}}{\longleftrightarrow}\frac{\mathrm{d}X(j\omega)}{\mathrm{d}\omega}
 $$
 
 ### Parseval's Relation
 
 $$
-    \int_{-\infty}^{\infty}{|x(t)|^2\mathrm{d}t}=\frac{1}{2\pi}\int_{-\infty}^{\infty}\Big|X(j\omega)\Big|^2\mathrm{d}\omega
+\int_{-\infty}^{\infty}{|x(t)|^2\mathrm{d}t}=\frac{1}{2\pi}\int_{-\infty}^{\infty}\Big|X(j\omega)\Big|^2\mathrm{d}\omega
 $$
 
 ### Zero Point
