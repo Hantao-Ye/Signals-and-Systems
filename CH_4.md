@@ -4,18 +4,18 @@
 
 ## Table and Equations
 
-|     Periodic Signal     |            Fourier Series Coefficients             |
-| :---------------------: | :------------------------------------------------: |
-|$x(t)$ is half-wave symmetry $x(t)=-x(t-T/2)$ | $a_{2k}  = 0$|
-|     $x(t)$ is real      | \$a_k = a\_{-k}^\*\$ and $ \|a_k\| = \|a_{-k}\| $ |
-| $x(t)$ is real and even |               $a_k$ is real and even               |
-| $x(t)$ is real and odd  |         $a_k$ is purely imaginary and odd          |
-
 $$
 x(t)=\sum_{k=-\infty}^{\infty}{a_ke^{jk\omega_0t}}\\[2ex]
 a_k = \frac{1}{T}\int_T{x(t)e^{-jk\omega_0t}\mathrm{d}t}\\[2ex]
 \frac{1}{T}\int_T {|x(t)|^2\mathrm{d}t} = \sum_{-\infty}^{\infty}{|a_k|^2}
 $$
+
+|                Periodic Signal                |         Fourier Series Coefficients         |
+| :-------------------------------------------: | :-----------------------------------------: |
+| $x(t)$ is half-wave symmetry $x(t)=-x(t-T/2)$ |                $a_{2k}  = 0$                |
+|                $x(t)$ is real                 | $a_k=a^*_{-k}$ and $ \|a_k\| = \|a_{-k}\| $ |
+|            $x(t)$ is real and even            |           $a_k$ is real and even            |
+|            $x(t)$ is real and odd             |      $a_k$ is purely imaginary and odd      |
 
 ## 4.1 Fourier Series Representation of Continuous-time Periodic Signals
 
@@ -124,6 +124,7 @@ $$
 - Fourier Series Coefficients (Spectral Coefficients): $\{a_k\}$
 - Magnitude Spectrum: $|a_k|$
 - Phase Spectrum: $\angle{a_k}$
+  
   > the magnitude spectrum and phase spectrum all have **discrete property**, **harmonic property** and **convergence property**
 - Constant Component:
 

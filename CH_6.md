@@ -2,6 +2,42 @@
 
 [TOC]
 
+## Tables and Equations
+
+$$
+X(s) = \int_{-\infty}^{\infty}{x(t)e^{-st}\mathrm{d}t}\\[2ex]
+X(s) = \int_{0^-}^{\infty}{x(t)e^{-st}\mathrm{d}t}\\[2ex]
+x(0^+) =\lim_{s\to\infty}{sX(s)}\\[2ex]
+\lim_{t\to\infty}{x(t)} = \lim_{s\to 0}{sX(s)}\\[2ex]
+\frac{\mathrm{d}}{\mathrm{d}t}x(t)\longleftrightarrow sX(s)-x(0^{-})\\[2ex]
+\frac{\mathrm{d}^2}{\mathrm{d}t^2}x(t)\longleftrightarrow s^2X(s)-sx(0^-)-x'(0^{-})\\[2ex]
+\frac{\mathrm{d}^n}{\mathrm{d}t^n}x(t)\longleftrightarrow s^nX(s)-\sum_{k=0}^{n-1}{s^{n-k-1}x^{(k)}(0^-)}\\[2ex]
+X(s) = M \frac{\prod_{i=1}^{R}(s-z_i)}{\prod_{j=1}^P(s-p_j)}\\[2ex]
+V_L(s) = sLI_L(s) - Li_L(0^-)\\[2ex]
+I_L(s) = \frac{1}{sL}V_L(s)+\frac{1}{s}i_L(0^-)\\[2ex]
+V_C(s) = \frac{1}{sC}I_C(s)+\frac{1}{s}v_C(0^-)\\[2ex]
+I_C(s) = sCV_C(s)-Cv_C(0^-)\\[2ex]
+r(t) = e(t)*h(t)\longleftrightarrow R(s)= E(s)\cdot H(s)\\[2ex]
+H(s) = \frac{R(s)}{E(s)}\\[2ex]
+$$
+
+|           Aperiodic Signal           |            Fourier Signal            |                   Signal                    |                 Transform                  |     ROC     |
+| :----------------------------------: | :----------------------------------: | :-----------------------------------------: | :----------------------------------------: | :---------: |
+|            $ax(t)+by(t)$             |            $aX(s)+bY(s)$             |                $\delta (t)$                 |                     1                      |   All $s$   |
+|              $x(t-t_0)$              |           $e^{-s t_0}X(s)$           |                   $u(t)$                    |               $\frac{1}{s}$                |    $s>0$    |
+|           $e^{s_0 t}x(t)$            |              $X(s-s_0)$              |                  $-u(-t)$                   |               $\frac{1}{s}$                |    $s<0$    |
+|               $x^*(t)$               |              $X^*(s^*)$              |        $\frac{t^{n-1}}{(n-1)!}u(t)$         |              $\frac{1}{s^n}$               |    $s>0$    |
+|               $x(at)$                |   $\frac{1}{\|a\|}X(\frac{s}{a})$    |       $-\frac{t^{n-1}}{(n-1)!}u(-t)$        |              $\frac{1}{s^n}$               |    $s<0$    |
+|               $x(-t)$                |               $X(-s)$                |             $e^{-\alpha t}u(t)$             |            $\frac{1}{s+\alpha}$            | $s>-\alpha$ |
+|             $x(t)*y(t)$              |              $X(s)Y(s)$              |            $-e^{-\alpha t}u(-t)$            |            $\frac{1}{s+\alpha}$            | $s<-\alpha$ |
+| $\frac{\mathrm{d}}{\mathrm{d}t}x(t)$ |               $s X(s)$               |  $\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t)$  |          $\frac{1}{(s+\alpha)^n}$          | $s>-\alpha$ |
+| $\int_{-\infty}^t{x(t)\mathrm{d}t}$  |          $\frac{1}{s}X(s)$           | $-\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(-t)$ |          $\frac{1}{(s+\alpha)^n}$          | $s<-\alpha$ |
+|               $-tx(t)$               | $\frac{\mathrm{d}}{\mathrm{d}s}X(s)$ |                $\delta(t-T)$                |                 $e^{-sT}$                  |   All $s$   |
+|                                      |                                      |           $[\cos\omega_0 t]u(t)$            |         $\frac{s}{s^2+\omega_0^2}$         |    $s>0$    |
+|                                      |                                      |           $[\sin\omega_0 t]u(t)$            |     $\frac{\omega_0}{s^2+\omega_0^2}$      |    $s>0$    |
+|                                      |                                      |     $[e^{-\alpha t}\cos\omega_0 t]u(t)$     | $\frac{s+\alpha}{(s+\alpha)^2+\omega_0^2}$ | $s>\alpha$  |
+|                                      |                                      |     $[e^{-\alpha t}\sin\omega_0 t]u(t)$     | $\frac{\omega_0}{(s+\alpha)^2+\omega_0^2}$ | $s>\alpha$  |
+
 ## 6.1 The Laplace Transform
 
 For some signals which have no Fourier transforms, we can preprocess them like
@@ -245,7 +281,7 @@ $$
 $$
 v_L(t) = L\frac{\mathrm{d}i_L(t)}{\mathrm{d}t}\\[2ex]
 V_L(s) = sLI_L(s) - Li_L(0^-)\\[2ex]
-I_L(s) = \frac{1}{sL}V_L(s)=\frac{1}{s}i_L(0^-)\\[2ex]
+I_L(s) = \frac{1}{sL}V_L(s)+\frac{1}{s}i_L(0^-)\\[2ex]
 $$
 
 #### Conductor
@@ -263,7 +299,7 @@ $$
 <div align = center><img width = 400 height = 100 src = "./assets/Ch_6_figure_8.png"></div>
 $$
 r(t) = e(t)*h(t)\longleftrightarrow R(s)= E(s)\cdot H(s)\\[2ex]
-H(s) = \frac{R(s)}{E(s)}
+H(s) = \frac{R(s)}{E(s)}\\[2ex]
 $$
 
 ### $H(s)$ Poles
@@ -296,31 +332,3 @@ $$
 > **An LTI system is stable if and only if the ROC of its system function $H(s)$ includes the $j\omega$-axis**
 
 > A causal system with rational system function $H(s)$ is stable if and only if all of the poles of $H(s)$ lie in the left-half of the s-plane ―i.e. all of the poles have negative real parts.
-
-## Tables and Equations
-
-$$
-X(s) = \int_{-\infty}^{\infty}{x(t)e^{-st}\mathrm{d}t}\\[2ex]
-X(s) = \int_{0^-}^{\infty}{x(t)e^{-st}\mathrm{d}t}\\[2ex]
-x(0^+) =\lim_{s\to\infty}{sX(s)}\\[2ex]
-\lim_{t\to\infty}{x(t)} = \lim_{s\to 0}{sX(s)}\\[2ex]
-\frac{\mathrm{d}}{\mathrm{d}t}x(t)\longleftrightarrow sX(s)-x(0^{-})\\[2ex]
-\frac{\mathrm{d}^n}{\mathrm{d}t^n}x(t)\longleftrightarrow s^nX(s)-\sum_{k=0}^{n-1}{s^{n-k-1}x^{(k)}(0^-)}
-$$
-
-|           Aperiodic Signal           |            Fourier Signal            |                   Signal                    |                 Transform                  |     ROC     |
-| :----------------------------------: | :----------------------------------: | :-----------------------------------------: | :----------------------------------------: | :---------: |
-|            $ax(t)+by(t)$             |            $aX(s)+bY(s)$             |                $\delta (t)$                 |                     1                      |   All $s$   |
-|              $x(t-t_0)$              |           $e^{-s t_0}X(s)$           |                   $u(t)$                    |               $\frac{1}{s}$                |    $s>0$    |
-|           $e^{s_0 t}x(t)$            |              $X(s-s_0)$              |                  $-u(-t)$                   |               $\frac{1}{s}$                |    $s<0$    |
-|               $x^*(t)$               |              $X^*(s^*)$              |        $\frac{t^{n-1}}{(n-1)!}u(t)$         |              $\frac{1}{s^n}$               |    $s>0$    |
-|               $x(at)$                |   $\frac{1}{\|a\|}X(\frac{s}{a})$    |       $-\frac{t^{n-1}}{(n-1)!}u(-t)$        |              $\frac{1}{s^n}$               |    $s<0$    |
-|               $x(-t)$                |               $X(-s)$                |             $e^{-\alpha t}u(t)$             |            $\frac{1}{s+\alpha}$            | $s>-\alpha$ |
-|             $x(t)*y(t)$              |              $X(s)Y(s)$              |            $-e^{-\alpha t}u(-t)$            |            $\frac{1}{s+\alpha}$            | $s<-\alpha$ |
-| $\frac{\mathrm{d}}{\mathrm{d}t}x(t)$ |               $s X(s)$               |  $\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(t)$  |          $\frac{1}{(s+\alpha)^n}$          | $s>-\alpha$ |
-| $\int_{-\infty}^t{x(t)\mathrm{d}t}$  |          $\frac{1}{s}X(s)$           | $-\frac{t^{n-1}}{(n-1)!}e^{-\alpha t}u(-t)$ |          $\frac{1}{(s+\alpha)^n}$          | $s<-\alpha$ |
-|               $-tx(t)$               | $\frac{\mathrm{d}}{\mathrm{d}s}X(s)$ |                $\delta(t-T)$                |                 $e^{-sT}$                  |   All $s$   |
-|                                      |                                      |           $[\cos\omega_0 t]u(t)$            |         $\frac{s}{s^2+\omega_0^2}$         |    $s>0$    |
-|                                      |                                      |           $[\sin\omega_0 t]u(t)$            |     $\frac{\omega_0}{s^2+\omega_0^2}$      |    $s>0$    |
-|                                      |                                      |     $[e^{-\alpha t}\cos\omega_0 t]u(t)$     | $\frac{s+\alpha}{(s+\alpha)^2+\omega_0^2}$ | $s>\alpha$  |
-|                                      |                                      |     $[e^{-\alpha t}\sin\omega_0 t]u(t)$     | $\frac{\omega_0}{(s+\alpha)^2+\omega_0^2}$ | $s>\alpha$  |
